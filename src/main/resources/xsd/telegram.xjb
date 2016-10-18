@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:annox="http://annox.dev.java.net"
+               xmlns:itn="http://jaxb2-commons.dev.java.net/basic/inheritance"
+               jaxb:extensionBindingPrefixes="itn annox"
+               schemaLocation="telegram.xsd">
+
+    <jaxb:bindings node="//xsd:complexType" multiple="true">
+        <itn:implements>java.io.Serializable</itn:implements>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Update']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">update_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Message']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">message_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Message']//xsd:element[@name='sender']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">from</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='User']//xsd:element[@name='firstName']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">first_name</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='User']//xsd:element[@name='lastName']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">last_name</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='PhotoSize']//xsd:element[@name='fileSize']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_size</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='PhotoSize']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Audio']//xsd:element[@name='fileSize']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_size</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Audio']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Audio']//xsd:element[@name='mimeType']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">mime_type</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Document']//xsd:element[@name='fileSize']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_size</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Document']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Document']//xsd:element[@name='mimeType']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">mime_type</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Document']//xsd:element[@name='fileName']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_name</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Sticker']//xsd:element[@name='fileSize']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_size</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Sticker']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Video']//xsd:element[@name='fileSize']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_size</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Video']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Video']//xsd:element[@name='mimeType']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">mime_type</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Voice']//xsd:element[@name='fileSize']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_size</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Voice']//xsd:element[@name='id']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">file_id</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="//xsd:complexType[@name='Voice']//xsd:element[@name='mimeType']">
+        <annox:annotate target="field">
+            <annox:annotate annox:class="com.google.gson.annotations.SerializedName">mime_type</annox:annotate>
+        </annox:annotate>
+    </jaxb:bindings>
+</jaxb:bindings>

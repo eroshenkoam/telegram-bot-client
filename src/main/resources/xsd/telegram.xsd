@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:ns="urn:telegram.qameta.io"
+            targetNamespace="urn:telegram.qameta.io"
+            version="2.1">
+
+    <xsd:complexType name="BaseResponse">
+        <xsd:sequence>
+            <xsd:element name="ok" type="xsd:boolean"/>
+            <xsd:element name="errorCode" type="xsd:int"/>
+            <xsd:element name="description" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="User">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="lastName" type="xsd:string"/>
+            <xsd:element name="username" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="GroupChat">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="title" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Update">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="message" type="ns:Message"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Message">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="sender" type="ns:User"/>
+            <xsd:element name="chat" type="ns:GroupChat"/>
+            <xsd:element name="date" type="xsd:int"/>
+            <xsd:element name="photo" type="ns:PhotoSize" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="audio" type="ns:Audio"/>
+            <xsd:element name="document" type="ns:Document"/>
+            <xsd:element name="sticker" type="ns:Sticker"/>
+            <xsd:element name="video" type="ns:Video"/>
+            <xsd:element name="voice" type="ns:Voice"/>
+            <xsd:element name="text" type="xsd:string"/>
+            <xsd:element name="location" type="ns:Location"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PhotoSize">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="width" type="xsd:int"/>
+            <xsd:element name="height" type="xsd:int"/>
+            <xsd:element name="fileSize" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Audio">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="duration" type="xsd:int"/>
+            <xsd:element name="performer" type="xsd:string"/>
+            <xsd:element name="title" type="xsd:string"/>
+            <xsd:element name="mimeType" type="xsd:string"/>
+            <xsd:element name="fileSize" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Document">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="thumb" type="ns:PhotoSize"/>
+            <xsd:element name="fileName" type="xsd:string"/>
+            <xsd:element name="mimeType" type="xsd:string"/>
+            <xsd:element name="fileSize" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Sticker">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="width" type="xsd:int"/>
+            <xsd:element name="height" type="xsd:int"/>
+            <xsd:element name="thumb" type="ns:PhotoSize"/>
+            <xsd:element name="fileSize" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Video">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="width" type="xsd:int"/>
+            <xsd:element name="height" type="xsd:int"/>
+            <xsd:element name="duration" type="xsd:int"/>
+            <xsd:element name="thumb" type="ns:PhotoSize"/>
+            <xsd:element name="mimeType" type="xsd:string"/>
+            <xsd:element name="fileSize" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Voice">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="duration" type="xsd:int"/>
+            <xsd:element name="mimeType" type="xsd:string"/>
+            <xsd:element name="fileSize" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Location">
+        <xsd:sequence>
+            <xsd:element name="longitude" type="xsd:float"/>
+            <xsd:element name="latitude" type="xsd:float"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
